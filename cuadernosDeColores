@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Cuaderno {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Solicitar el número de hojas del cuaderno
+        System.out.print("Ingrese el número de hojas del cuaderno: ");
+        int numHojas = sc.nextInt();
+
+        // Calcular la cantidad de hojas de cada color
+        int numCiclosCompletos = numHojas / 3;
+        int resto = numHojas % 3;
+
+        int numHojasRojas = numCiclosCompletos + (resto >= 1 ? 1 : 0);
+        int numHojasVerdes = numCiclosCompletos + (resto >= 2 ? 1 : 0);
+        int numHojasAzules = numCiclosCompletos;
+
+        // Mostrar los resultados por pantalla
+        System.out.println("El cuaderno tiene:");
+        System.out.println(numHojasRojas + " hojas rojas");
+        System.out.println(numHojasVerdes + " hojas verdes");
+        System.out.println(numHojasAzules + " hojas azules");
+    }
+
+}
